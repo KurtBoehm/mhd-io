@@ -3,14 +3,12 @@
 #include <variant>
 #include <vector>
 
-#include "mhd-io/base.hpp"
 #include "thesauros/test.hpp"
 
+#include "mhd-io/base.hpp"
 #include "mhd-io/read.hpp"
 
 int main(int /*argc*/, const char* const* const argv) {
-  using namespace std::literals;
-
   const auto base_path = std::filesystem::canonical(std::filesystem::path{argv[0]}.parent_path());
   const auto mhd_path = base_path / "UFZ_CT_02.mhd";
 
