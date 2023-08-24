@@ -12,7 +12,10 @@ namespace mhdio {
 using Int = std::int64_t;
 using Float = double;
 
-using Value = std::variant<bool, Int, std::string, std::vector<Int>, std::vector<Float>>;
+using Ints = std::vector<Int>;
+using Floats = std::vector<Float>;
+
+using Value = std::variant<bool, Int, Ints, Floats, std::string>;
 using Map = ankerl::unordered_dense::map<std::string, Value>;
 } // namespace mhdio
 
