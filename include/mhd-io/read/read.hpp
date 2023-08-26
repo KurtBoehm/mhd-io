@@ -6,6 +6,7 @@
 #include <charconv>
 #include <filesystem>
 #include <optional>
+#include <span>
 #include <string>
 #include <string_view>
 #include <system_error>
@@ -105,7 +106,7 @@ inline Map parse_header(std::string_view sv) {
 inline Map read_mhd(const std::filesystem::path& p) {
   thes::FileReader mhd_reader(p);
   thes::FixedArrayDefault<char> mhd_data(mhd_reader.size());
-  mhd_reader.read(mhd_data.data(), mhd_data.size());
+  mhd_reader.read(std::span{mhd_data.data(), mhd_data.size()});
 
   const std::string_view contents(mhd_data.begin(), mhd_data.end());
   return parse_header(contents);
