@@ -6,16 +6,14 @@ foreach name : ['UFZ_CT_02.mhd']
   configure_file(copy: true, input: 'data/' + name, output: name)
 endforeach
 
-foreach name, info : {
-  'Read': [['read.cpp'], []],
+foreach name, deps : {
+  'read': [],
 }
-  sources = info[0]
-  deps = info[1]
   test(
-    name,
+    f'test @name@',
     executable(
-      'Test' + name,
-      sources,
+      f'test-@name@',
+      f'@name@.cpp',
       override_options: opts,
       cpp_args: args,
       dependencies: [mhd_io_dep] + deps,
