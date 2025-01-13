@@ -1,4 +1,4 @@
-project('unordered-dense', 'cpp', version: '4.1.0', license: 'MIT')
+project('unordered-dense', 'cpp', version: '4.5.0', license: 'MIT')
 
 install_headers(['include/ankerl/unordered_dense.h'], subdir: 'ankerl')
 
