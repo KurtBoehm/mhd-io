@@ -1,8 +1,8 @@
 #include <filesystem>
-#include <iostream>
 #include <variant>
 #include <vector>
 
+#include "thesauros/format.hpp"
 #include "thesauros/test.hpp"
 
 #include "mhd-io/base.hpp"
@@ -14,8 +14,8 @@ int main(int /*argc*/, const char* const* const argv) {
 
   auto header = mhdio::read_mhd(mhd_path);
   for (const auto& [key, value] : header) {
-    std::cout << key << ": ";
-    std::visit([](const auto& v) { std::cout << thes::print(v) << '\n'; }, value);
+    fmt::print("{}: ", key);
+    std::visit([](const auto& v) { fmt::print("{}\n", v); }, value);
   }
 
   THES_ASSERT(header["NDims"] == mhdio::Value{3});

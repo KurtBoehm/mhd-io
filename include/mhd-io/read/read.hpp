@@ -45,7 +45,7 @@ inline Value parse_mhd_value(std::string_view sv) {
     return std::nullopt;
   };
 
-  const char* first_space = std::find(sv.begin(), sv.end(), ' ');
+  const char* first_space = std::ranges::find(sv, ' ');
   if (first_space != sv.end()) {
     auto parse = [first_space, sv]<typename T>(T v1, auto parser) {
       std::vector<T> vec{v1};

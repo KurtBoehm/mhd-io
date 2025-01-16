@@ -1,7 +1,9 @@
 #ifndef INCLUDE_MHD_IO_MHD_IO_HPP
 #define INCLUDE_MHD_IO_MHD_IO_HPP
 
-#include "base/defs.hpp" // IWYU pragma: export
-#include "read/read.hpp" // IWYU pragma: export
+// IWYU pragma: begin_exports
+#include "base.hpp"
+#include "read.hpp"
+// IWYU pragma: end_exports
 
 #endif // INCLUDE_MHD_IO_MHD_IO_HPP
