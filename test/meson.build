@@ -1,5 +1,4 @@
 options_sub = subproject('options')
-opts = options_sub.get_variable('all_opts')
 args = options_sub.get_variable('all_args')
 
 foreach name : ['UFZ_CT_02.mhd']
@@ -14,7 +13,6 @@ foreach name, deps : {
     executable(
       f'test-@name@',
       f'@name@.cpp',
-      override_options: opts,
       cpp_args: args,
       dependencies: [mhd_io_dep] + deps,
     ),
