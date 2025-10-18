@@ -1,4 +1,4 @@
-project('mhd-io', 'cpp', default_options: ['cpp_std=c++20', 'warning_level=3'])
+project('mhd-io', 'cpp', default_options: ['cpp_std=c++23', 'warning_level=3'])
 
 thesauros_dep = dependency('thesauros')
 unordered_dense_dep = dependency('unordered_dense')

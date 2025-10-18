@@ -19,5 +19,7 @@ There are some wraps package files which are based on Meson wraps from the [Meso
 These are:
 
 - `fmt`
+- `google-benchmark`
 - `liblzma`
 - `nlohmann-json`
+- `range-v3`
